@@ -7,6 +7,7 @@ colorscheme solarized
 
 syntax enable
 set number				" line numbers
+set ruler
 set showmode			" always display the current mode
 set laststatus=2		" always show statusline
 
@@ -22,6 +23,10 @@ set autoread			" automatically reload changed files (e.g. on checkout)
 set nobackup
 set nowritebackup
 set noswapfile
+
+" nice completion when opening files
+set wildmode=longest,list,full
+set wildmenu
 
 " search
 set ignorecase
@@ -45,3 +50,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" ctrl+a/ctrl+e cursor movement in command mode
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+set re=2                " without this syntax highlighting typescript files causes vim to freeze
+set splitbelow
